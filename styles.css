@@ -1,0 +1,492 @@
+:root {
+  --navy: #071b38;
+  --blue: #123b69;
+  --gold: #c8952e;
+  --green: #2f6f5e;
+  --paper: #fbfaf7;
+  --surface: #ffffff;
+  --mist: #eef3f7;
+  --line: #d9dee6;
+  --text: #1f2937;
+  --muted: #687285;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--paper);
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px clamp(20px, 5vw, 72px);
+  color: #fff;
+  background: rgba(7, 27, 56, 0.96);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 18px;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+main {
+  overflow: hidden;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: clamp(28px, 5vw, 68px);
+  align-items: center;
+  min-height: calc(100vh - 72px);
+  padding: clamp(42px, 6vw, 86px) clamp(20px, 5vw, 72px);
+  color: #fff;
+  background:
+    linear-gradient(108deg, rgba(7, 27, 56, 0.98) 0%, rgba(18, 59, 105, 0.93) 56%, rgba(47, 111, 94, 0.9) 100%),
+    url("../../Downloads/ChatGPT%20Image%20Jul%203,%202026,%2004_20_41%20PM.png") center / cover no-repeat;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: #d9a94d;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 24px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(3.4rem, 9vw, 8rem);
+  line-height: 0.9;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero-summary {
+  max-width: 720px;
+  margin-bottom: 28px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1.05rem, 2vw, 1.32rem);
+}
+
+.hero-actions,
+.goal-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  font-weight: 800;
+}
+
+.button.primary {
+  color: var(--navy);
+  background: #fff;
+}
+
+.button.secondary {
+  color: #fff;
+}
+
+.hero-card {
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.25);
+}
+
+.portrait-frame {
+  width: min(260px, 70vw);
+  aspect-ratio: 1;
+  margin: 0 auto 24px;
+  overflow: hidden;
+  border: 5px solid #d9a94d;
+  border-radius: 50%;
+  background: #f5f5f1;
+}
+
+.portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 14% 5%;
+  transform: scale(1.72);
+}
+
+blockquote {
+  margin: 0;
+  color: #fff3d4;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-style: italic;
+  text-align: center;
+}
+
+.quick-contact {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.quick-contact a,
+.quick-contact p {
+  min-height: 92px;
+  margin: 0;
+  padding: 22px clamp(16px, 3vw, 34px);
+  overflow-wrap: anywhere;
+  background: #fff;
+  font-weight: 800;
+}
+
+.quick-contact span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.section-grid,
+.goals-section {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.35fr) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 64px);
+  padding: clamp(52px, 7vw, 92px) clamp(20px, 5vw, 72px);
+  border-bottom: 1px solid var(--line);
+}
+
+.section-heading {
+  position: sticky;
+  top: 96px;
+  align-self: start;
+}
+
+.section-heading p {
+  margin-bottom: 8px;
+  color: var(--gold);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin-bottom: 0;
+  color: var(--navy);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1;
+}
+
+h3 {
+  margin-bottom: 12px;
+  color: var(--navy);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.45rem;
+}
+
+.content-card {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 16px 40px rgba(16, 33, 62, 0.07);
+}
+
+.wide {
+  grid-column: 2;
+}
+
+.split,
+.cards-three,
+.timeline {
+  display: grid;
+  gap: 20px;
+}
+
+.split {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cards-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.timeline {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.timeline article {
+  padding: 28px;
+  border-left: 5px solid var(--gold);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(16, 33, 62, 0.07);
+}
+
+.timeline span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.skill-bars {
+  display: grid;
+  gap: 15px;
+}
+
+.skill-bars div {
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) minmax(120px, 210px);
+  align-items: center;
+  gap: 16px;
+}
+
+.skill-bars span {
+  font-weight: 700;
+}
+
+.skill-bars b {
+  position: relative;
+  height: 10px;
+  overflow: hidden;
+  background: #d4d8dd;
+  border-radius: 999px;
+}
+
+.skill-bars b::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--value);
+  background: var(--blue);
+  border-radius: inherit;
+}
+
+ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+li + li {
+  margin-top: 10px;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-list li,
+.goal-pills span {
+  margin: 0;
+  padding: 9px 13px;
+  border-radius: 6px;
+  color: var(--navy);
+  background: var(--mist);
+  font-weight: 800;
+}
+
+.language-list {
+  display: grid;
+  gap: 12px;
+}
+
+.language-list p {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 0;
+}
+
+.goals-section {
+  align-items: start;
+  color: #fff;
+  background: var(--navy);
+}
+
+.goals-section h2 {
+  color: #fff;
+}
+
+.goals-section article {
+  max-width: 760px;
+}
+
+.goal-pills {
+  margin: 18px 0;
+}
+
+.goal-pills span {
+  min-width: 88px;
+  color: var(--navy);
+  background: #fff;
+  text-align: center;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 28px clamp(20px, 5vw, 72px);
+  color: #fff;
+  background: #041022;
+}
+
+footer p {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+footer div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+@media (max-width: 980px) {
+  .topbar {
+    position: static;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  nav {
+    justify-content: flex-start;
+  }
+
+  .hero,
+  .section-grid,
+  .goals-section {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .section-heading {
+    position: static;
+  }
+
+  .wide {
+    grid-column: auto;
+  }
+
+  .quick-contact,
+  .split,
+  .cards-three,
+  .timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .topbar {
+    padding: 16px 20px;
+  }
+
+  nav {
+    gap: 8px 12px;
+    font-size: 0.86rem;
+  }
+
+  .hero-card,
+  .content-card,
+  .timeline article {
+    padding: 22px;
+  }
+
+  .quick-contact,
+  .split,
+  .cards-three,
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-bars div {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 17vw, 4.7rem);
+  }
+}
